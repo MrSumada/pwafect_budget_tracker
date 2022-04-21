@@ -41,9 +41,6 @@ const config = {
             $: 'jquery',
             jQuery: 'jquery'
         }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'static'
-        }),
         new WebpackPwaManifest({
             name: "Pwafect Budget Tracker",
             short_name: "Pwafect",
@@ -64,6 +61,3 @@ const config = {
 };
 
 module.exports = config;
-
-
-
