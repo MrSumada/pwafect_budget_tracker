@@ -8,7 +8,7 @@ const config = {
         idb: './public/js/idb.js'
     },
     output: {
-        path: path.join(__dirname + "/dist"),
+        path: path.join(__dirname + "/public/dist"),
         filename: "[name].bundle.js",
         publicPath: ''
     },
