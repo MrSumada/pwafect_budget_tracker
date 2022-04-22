@@ -46,7 +46,7 @@ const config = {
             short_name: "Pwafect",
             description: "An app for tracking your budget.",
             display: "standalone",
-            start_url: "../index.html",
+            start_url: "/",
             background_color: "#01579b",
             theme_color: "#ffffff",
             fingerprints: false,
