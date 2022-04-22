@@ -3,48 +3,32 @@ let db;
 const request = indexedDB.open('pwafect_budget', 1);
 
 request.onupgradeneeded = function(event) {
-    
     const db = event.target.result;
-    
     db.createObjectStore('new_budget', { autoIncrement: true });
 };
 
 request.onsuccess = function(event) {
-
     db = event.target.result;
-
     if (navigator.onLine) {
-
+        console.log("navigator online")
     }
 };
 
-
 request.onerror = function(event) {
-
     console.log(event.target.errorCode);
-
 };
 
-
 function saveRecord(record) {
-
     const transaction = db.transaction(['new_budget'], 'readwrite');
-
     const budgetObjectStore = transaction.objectStore('new_budget');
-
     budgetObjectStore.add(record);
 }
 
 function uploadBudget() {
-
     const transaction = db.transaction(['new_budget'], 'readwrite');
-
     const budgetObjectStore = transaction.objectStore('new_budget');
-
     const getAll = budgetObjectStore.getAll();
-
     getAll.onsuccess = function() {
-
         if (getAll.result.length > 0) {
             fetch('api/transaction', {
                 method: 'POST',
