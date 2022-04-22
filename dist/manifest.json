@@ -47,6 +47,6 @@
   "display": "standalone",
   "start_url": "../index.html",
   "description": "An app for tracking your budget.",
-  "background_color": "#01579b",
-  "theme_color": "#ffffff"
+  "background_color": "#3D3B8E",
+  "theme_color": "#B0E298"
 }

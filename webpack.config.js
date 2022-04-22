@@ -15,32 +15,32 @@ const config = {
     module: {
         rules: [
             {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-                {
-                loader: 'file-loader',
-                options: {
-                    esModule: false,
-                    name(file) {
-                    return '[path][name].[ext]';
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                            name(file) {
+                                return '[path][name].[ext]';
+                            },
+                            publicPath(url) {
+                                return url.replace('../', '/assets/');
+                            }
+                        }
                     },
-                    publicPath(url) {
-                    return url.replace('../', '/assets/');
+                    {
+                    loader: 'image-webpack-loader'
                     }
-                }
-                },
-                {
-                loader: 'image-webpack-loader'
-                }
-            ]
+                ]
             }
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery'
+        // }),
         new WebpackPwaManifest({
             name: "Pwafect Budget Tracker",
             short_name: "Pwafect",
