@@ -4,8 +4,7 @@ const path = require('path');
 
 const config = {
     entry: {
-        index: './public/js/index.js',
-        idb: './public/js/idb.js'
+        index: './public/js/index.js'
     },
     output: {
         path: path.join(__dirname + "/public/dist"),
@@ -47,8 +46,8 @@ const config = {
             description: "An app for tracking your budget.",
             display: "standalone",
             start_url: "/",
-            background_color: "#01579b",
-            theme_color: "#ffffff",
+            background_color: "#3D3B8E",
+            theme_color: "#B0E298",
             fingerprints: false,
             inject: false,
             icons: [{
